@@ -1,0 +1,21 @@
+{
+  "name": "git4teams",
+  "version": "0.0.1",
+  "description": "GIT scripts for teams",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marmotz/git4teams.git"
+  },
+  "author": "Renaud LITTOLFF <rlittolff@gmail.com>",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/marmotz/git4teams/issues"
+  },
+  "homepage": "https://github.com/marmotz/git4teams#readme",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "git-script": "^0.5.0",
+    "logs": "^1.1.2"
+  }
+}

@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+const { exec } = require('child_process');
+
+program
+    .arguments('<name>')
+    .action(
+        function(name) {
+            console.log(
+                'Creating release %s',
+                name
+            );
+            console.log(
+                '* creating branch "release/%s" from branch "base"',
+                name
+            );
+
+            exec('git checkout -b base/' + name + ' base');
+        }
+    )
+;
+
+program.parse(process.argv);
