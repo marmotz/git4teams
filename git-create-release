@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-var program = require('commander');
-const { exec } = require('child_process');
+const program = require('commander');
+const { exec } = require('child-process-promise');
 
 program
     .arguments('<name>')
@@ -11,12 +11,28 @@ program
                 'Creating release %s',
                 name
             );
-            console.log(
-                '* creating branch "release/%s" from branch "base"',
-                name
-            );
 
-            exec('git checkout -b base/' + name + ' base');
+            console.log('* updating branch "base"');
+            exec('git checkout base')
+                .then(
+                    (result) => {
+
+                    }
+                )
+                .catch(
+                    (err) => {
+                        console.error('ERROR: ', err);
+                    }
+                )
+            ;
+            // exec('git pull base');
+            //
+            // console.log(
+            //     '* creating branch "release/%s/base" from branch "base"',
+            //     name
+            // );
+            //
+            // exec('git checkout -b base/' + name + ' base');
         }
     )
 ;
